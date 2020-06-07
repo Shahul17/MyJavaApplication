@@ -67,7 +67,7 @@ void getcddetails() {
 	id=scanner.nextLine();
 	System.out.println("please enter the cd price");
 	price=scanner.nextFloat();
-	this.movie= movie;
+	
 	
 }
 }

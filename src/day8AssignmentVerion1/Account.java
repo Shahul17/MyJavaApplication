@@ -33,9 +33,9 @@ Account(String name,String number,float balance){
 	this.number = number;
 	this.balance = balance;
 }
-	void printhellow(){
-		System.out.println("hellow");
-	}
+void printlngitexample() {
+	System.out.println("github"); 
+}
 void GetAccountDetails() {
 	System.out.println("please enter the Accounter name");
 	name = scanner.nextLine();
