@@ -118,15 +118,17 @@ System.out.println("---------------------------------------");
 public class Office{
 	public static void main(String[] args) {
 		Manager manager = new Manager();
-		manager.Details();
-		manager.customerDetails();
+		
+		
 		CustomerManager CustomerManagerObject;
 		CustomerManagerObject=manager;
+		manager.customerDetails();
 		CustomerManagerObject.solveIssues();
 		CustomerManagerObject.approveLoan();
 		
 		EmployeeManager EmployeeManagerObject;
 		EmployeeManagerObject=manager;
+		manager.Details();
 		EmployeeManagerObject.conductMeeting();
 		EmployeeManagerObject.setTarget();
 	}
