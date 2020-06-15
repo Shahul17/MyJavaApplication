@@ -1,6 +1,7 @@
 package day14;
-
-
+import java.io.File;
+import java.io.IOException;
+import java.io.FileWriter;
 
 
 
@@ -21,7 +22,7 @@ public class AccountManager extends Account {
 	}
 	public void addAccounts() {
 		
-	
+	try {
 		String choice = "No";
 		do {
 			addAccount();
@@ -30,7 +31,13 @@ public class AccountManager extends Account {
 			choice = scanner.nextLine();
 			
 		} while (!choice.toLowerCase().equals("no"));
-			}
+	}
+	catch(Exception io){
+		System.out.println("Some error Occured");
+
+	}
+	}
+
 	
 public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		if(addAccount==null||addAccounts==null) {
@@ -46,9 +53,9 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 	
 	
 
+	Account findcustomerrIndex(String number1) 
 	
-	Account findcustomerrIndex(String number1)
-	{
+		{
 		for(Account customer : accounts) {
 			if(customer != null)
 			{
@@ -60,7 +67,6 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		}
 		return null;
 	}
-	
 	public void printaccount() {
 		for (Account customer : accounts) {
 			System.out.println(customer);
@@ -68,7 +74,9 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		}
 	}
 	void deposite(double deposit,double balance) {
+		try{
 		System.out.println("enter amount to be deposite");
+		
 		deposit =scanner.nextDouble();
 		
 		 balance = balance + deposit;
@@ -76,13 +84,48 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		System.out.println("Your Money has been successfully depsited");
 		System.out.println("Deposited amount  is"+balance);
 	}
-	
+	catch(Exception e){
+		
+		System.out.println("some error occured");
+		e.printStackTrace();
+	}}
+	void WriteFile() {
+		try {
+			File myObj = new File("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails.txt");
+			if(myObj.createNewFile()) {
+				System.out.println("File created :"+myObj.getName());
+				System.out.println("Absolute path: " + myObj.getAbsolutePath());
+			}
+			else {
+				System.out.println("file already exist");
+			}
+		}catch (IOException e) {
+			System.out.println("An error occured");
+			e.printStackTrace();}
+		}
+	void Writefile1() {
+	try {
+		FileWriter mywriter = new FileWriter("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails.txt");
+		mywriter.write("\nAccount Details is");
+		mywriter.write("\nAccount Type is : Savings");
+		mywriter.write("\nAccount Number  is: 51331510406");
+		mywriter.write("\nAccount Name is: Ramu" );
+		mywriter.write("\nAccounter phone  is: 98XXXXXXXX78");
+		mywriter.write("\nAccount Age is : 25");
+		mywriter.write("Account Balance is: 250000");
+		mywriter.close();
+		System.out.println("Successfully wrote");
+	}catch(IOException e) {
+		System.out.println("an occured error");
+		e.printStackTrace();
+	}}
 	void printMenu() {
 		int userChoice = 0;
 		do {
 			System.out.println("--------------------");
 			System.out.println("1. Adding a new customer");
-			System.out.println("2. exit");
+			System.out.println("2.write Account details in file");
+			System.out.println("3.to click exit and Other Option");
 			System.out.println("--------------------");
 			userChoice  = scanner.nextInt();
 			switch (userChoice ) {
@@ -90,8 +133,12 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 			
 				addAccounts();				
 				break;
-			
 			case 2:
+				WriteFile();
+				Writefile1();			
+				break;
+			
+			case 3:
 				System.out.println("exiting.....");
 				break;
 			default:
@@ -99,7 +146,7 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 				break;
 			}
 			
-		} while (userChoice!=2);
+		} while (userChoice!=3);
 		
 	}
 	void ChooseAction() {
@@ -179,7 +226,7 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		accountManager.addAccounts();
 		
 		accountManager.printMenu();
-		accountManager.ChooseAction();
+	accountManager.ChooseAction();
 		
 	}
 
