@@ -91,7 +91,7 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 	}}
 	void WriteFile() {
 		try {
-			File myObj = new File("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails.txt");
+			File myObj = new File("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails1.txt");
 			if(myObj.createNewFile()) {
 				System.out.println("File created :"+myObj.getName());
 				System.out.println("Absolute path: " + myObj.getAbsolutePath());
@@ -105,7 +105,7 @@ public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
 		}
 	void Writefile1() {
 	try {
-		FileWriter mywriter = new FileWriter("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails.txt");
+		FileWriter mywriter = new FileWriter("C:\\Users\\Rajamohamed S\\eclipse-workspace\\AccountDetails1.txt");
 		mywriter.write("\nAccount Details is");
 		mywriter.write("\nAccount Type is : Savings");
 		mywriter.write("\nAccount Number  is: 51331510406");
