@@ -22,7 +22,7 @@ public class AccountManager extends Account {
 	}
 	public void addAccounts() {
 		
-	try {
+
 		String choice = "No";
 		do {
 			addAccount();
@@ -32,11 +32,8 @@ public class AccountManager extends Account {
 			
 		} while (!choice.toLowerCase().equals("no"));
 	}
-	catch(Exception io){
-		System.out.println("Some error Occured");
-
-	}
-	}
+	
+	
 
 	
 public static 	boolean equals(Set<?>addAccount,Set<?>addAccounts) {
